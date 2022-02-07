@@ -1,11 +1,19 @@
 import UIKit
 
-//Booleans
+var str = "Hello, playground"
 
-var isOpen: Bool = false
+//Tuples (n짝, n쌍)
 
-if !isOpen {
-    
-} else {
-    
-}
+var topTitle = ("메인화면", "mainIcon.png")
+
+topTitle.0
+topTitle.1
+
+//http status code
+var httpError = (statusCode: 404, description: "not found")
+
+//httpError.0
+//httpError.1
+
+httpError.statusCode
+httpError.description
