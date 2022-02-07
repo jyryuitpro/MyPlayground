@@ -1,34 +1,24 @@
 import UIKit
 
 //Optionals (옵셔널)
-
-//개념
 //값이 있을 수도 있고, 없을 수도 있다.
 
-//값이 있다.
-//값이 없다. -> nil
+//옵셔널 그냥 사용할 수 없는 경우가 많이 있음.
 
-//0 -> 다쓴 상태인 값
+var a: Int? = 10
+var b: Int? = 20
 
-var myAge: Int? = 0
+//unwrapped
+//unwrapping
 
-//값이 없는 상태 체크 -> 틀린 로직 (Swift 언어 스펙)
-if myAge == 0 {
-    
-}
+//Int? -> Int
+//String? -> String
+//Binary operator '+' cannot be applied to two 'Int?' operands
+//var c = a + b
 
-if myAge == nil {
-    
-}
+//coalesce
+var c = (a ?? 0) + (b ?? 0)
 
-//var myName: String? (동일함)
-var myName: String? = nil
-
-if myName == "" {
-    
-}
-
-//값이 없는 상태 체크
-if myName == nil {
-    
-}
+//force-unwrap -> 강제로, 힘으로
+//주의사항
+var d = a! + b!
