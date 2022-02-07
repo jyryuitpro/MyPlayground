@@ -5,20 +5,51 @@ import UIKit
 
 //옵셔널 그냥 사용할 수 없는 경우가 많이 있음.
 
-var a: Int? = 10
-var b: Int? = 20
+var a: Int? = 20
+var b: Int?
 
-//unwrapped
-//unwrapping
+//Unwrapping
+//if Statements
 
-//Int? -> Int
-//String? -> String
-//Binary operator '+' cannot be applied to two 'Int?' operands
-//var c = a + b
+if a != nil {
+    print(a!)
+}
 
-//coalesce
-var c = (a ?? 0) + (b ?? 0)
+//Unwrapping + nil check
+//if let
+//if var
+if let hasNumber = a {
+    print(hasNumber)
+}
 
-//force-unwrap -> 강제로, 힘으로
-//주의사항
-var d = a! + b!
+if var hasNumber = a {
+    hasNumber = hasNumber * 2
+    print(hasNumber)
+}
+
+//guard let
+//guard var
+//class AAA {
+//    guard let hasNumber = a else {
+//        return
+//    }
+//}
+
+func testFunc1() {
+    guard let hasNumber = a else {
+        return
+    }
+    print(hasNumber)
+    print("end")
+}
+
+func testFunc2() {
+    guard var hasNumber = a else {
+        return
+    }
+    hasNumber = hasNumber * 2
+    print(hasNumber)
+    print("end")
+}
+
+testFunc1()
