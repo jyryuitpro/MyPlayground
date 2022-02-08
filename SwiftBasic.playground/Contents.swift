@@ -1,18 +1,37 @@
 import UIKit
 
-//unicode 범위관련
+//Stirng
 
-//숫자만 입력받을 수 있어야 한다.
-//키보드 제한 -> .
+let myName = "lee min kim"
 
-let inputValue = "7"
-
-if inputValue >= "\u{30}" && inputValue <= "\u{39}" {
-    print("숫자 O")
-} else {
-    print("숫자 X")
+for character in myName {
+    print(character)
 }
 
-//영어만 입력해야 한다.
-"\u{41}"
-"\u{7a}"
+let myName2 = "kim"
+
+let name = myName + myName2
+
+let myName3 = "lee\nmin\nkim"
+
+let myLongStr =
+"""
+hi
+  hello
+welcom
+"""
+
+let isOn = false
+isOn.description
+
+let myNumber = 123
+myNumber.description
+String(myNumber)
+
+"my number is \(myNumber)".last
+
+let myNumber2 = 12.33
+String(myNumber2).split(separator: ".")
+
+let myNumber3 = "1233원"
+myNumber3.dropLast()
