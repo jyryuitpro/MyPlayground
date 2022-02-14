@@ -1,108 +1,57 @@
 import UIKit
 import Foundation
 
-//Control Flow (흐름 제어)
+//Function (함수)
 
-//for item in items {
-//    code
+//class A {
+//
 //}
 
-//if condition {
-//    code
+//struct B {
+//
 //}
 
-//switch value {
-//case pattern:
-//    code
-//default:
-//    code
-//}
+//계산기 만들기 -> Class
+// 더하기 기능 -> Function
 
-//for
-//let name = "anna"
-let name = "234234234"
+let a = 10
+let b = 20
 
-for char in name {
-//    print(char)
-    
-//    char: String.Element
-//    print(Int(char) * 10)
-    
-//    Value of optional type 'Int?' must be unwrapped to a value of type 'Int'
-//    print(Int(String(char)) * 10)
-    
-    print((Int(String(char)) ?? 0) * 10)
+func plus(num1: Int, num2: Int) -> Int {
+//    print("함수가 실행되는 부분")
+//    print("받은값", num1)
+    print("sum = ", num1 + num2)
+    return num1 + num2
 }
 
-let names = ["lee", "kim", "min"]
-
-for name in names {
-    print(name + "님")
+func simpleFunc() {
+    print("simple Func")
 }
 
-let numberOfLegs = ["ant": 6, "dog": 4]
+//plus(num1: a)
+let sum = plus(num1: a, num2: b)
+sum
 
-for dic in numberOfLegs {
-    print(dic)
+simpleFunc()
+
+var c = 0
+
+func plus2(num1: Int, num2: Int) {
+    c = num1 + num2
 }
 
-for index in 0...5 {
-    print(index)
+plus2(num1: a, num2: b)
+c
+
+func plus3(num1: Int, num2: Int) -> (String, Int) {
+    return ("결과값은", num1 + num2)
 }
 
-for index in 0..<5 {
-    print(index)
+let p = plus3(num1: a, num2: b)
+p
+
+func plusF(_ num1: Int, _ num2: Int) -> Int {
+    return num1 + num2
 }
 
-let names2 = ["kim", "lee", "hen"]
-
-for index in 0..<names2.count {
-    print(index)
-}
-
-//while (주의) - 왠만하면 사용하지 않는게 좋다.
-//무한으로 반복문안에서 계속 실행되는 경우 -> 멈춰버림
-//while condition {
-//    code
-//}
-
-//let a = 0
-
-//while (a == 0) {
-//    print("계속 실행")
-//}
-
-var a = 0
-
-while (a < 10) {
-    a = a + 1
-    print("계속 실행")
-}
-
-//Switch
-//조건에 대한 케이스를 만들어서 분기
-
-let b = "b"
-
-switch b {
-    
-case "a", "b", "c":
-    print("a or b or c")
-    
-case "d":
-    print("d")
-    
-default:
-    print("other")
-}
-
-let c = 100
-
-switch c {
-case 1:
-    print("num 1")
-case 2...5:
-    print("num 2~5")
-default:
-    print("other")
-}
+let q = plusF(a, b)
