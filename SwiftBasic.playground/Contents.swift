@@ -1,42 +1,108 @@
 import UIKit
+import Foundation
 
-//Collection Types
-//집합 타입
+//Control Flow (흐름 제어)
 
-//Dictionary
+//for item in items {
+//    code
+//}
 
-//var namesOfStreet = [String : String]()
-//var namesOfStreet = [String : Int]()
-//Dictionary는 Optional ?를 붙이지 않아도 nil이 언제든지 올 수 있다
-var namesOfStreet = [String : Any]()
+//if condition {
+//    code
+//}
 
-namesOfStreet["302ro"] = "1st Street"
-namesOfStreet["303ro"] = "2nd Street"
-namesOfStreet["304ro"] = 3
+//switch value {
+//case pattern:
+//    code
+//default:
+//    code
+//}
 
-//nil
-//Array처럼 Crash 나지는 않는다.
-namesOfStreet["302rr"]
+//for
+//let name = "anna"
+let name = "234234234"
 
-namesOfStreet["302ro"]
+for char in name {
+//    print(char)
+    
+//    char: String.Element
+//    print(Int(char) * 10)
+    
+//    Value of optional type 'Int?' must be unwrapped to a value of type 'Int'
+//    print(Int(String(char)) * 10)
+    
+    print((Int(String(char)) ?? 0) * 10)
+}
 
-namesOfStreet["302ro"] = 1
+let names = ["lee", "kim", "min"]
 
-namesOfStreet["302ro"]
+for name in names {
+    print(name + "님")
+}
 
-//값을 없애고 싶으면 nil을 대입한다. [key, value 자체가 없어진다.]
-namesOfStreet["302ro"] = nil
+let numberOfLegs = ["ant": 6, "dog": 4]
 
-//["304ro": 3, "303ro": "2nd Street"]
-namesOfStreet
-
-namesOfStreet.keys
-
-var namesOfStreet2 = ["a": 1, "b": 2, "c": 3,]
-
-for dic in namesOfStreet2 {
+for dic in numberOfLegs {
     print(dic)
 }
 
+for index in 0...5 {
+    print(index)
+}
 
+for index in 0..<5 {
+    print(index)
+}
 
+let names2 = ["kim", "lee", "hen"]
+
+for index in 0..<names2.count {
+    print(index)
+}
+
+//while (주의) - 왠만하면 사용하지 않는게 좋다.
+//무한으로 반복문안에서 계속 실행되는 경우 -> 멈춰버림
+//while condition {
+//    code
+//}
+
+//let a = 0
+
+//while (a == 0) {
+//    print("계속 실행")
+//}
+
+var a = 0
+
+while (a < 10) {
+    a = a + 1
+    print("계속 실행")
+}
+
+//Switch
+//조건에 대한 케이스를 만들어서 분기
+
+let b = "b"
+
+switch b {
+    
+case "a", "b", "c":
+    print("a or b or c")
+    
+case "d":
+    print("d")
+    
+default:
+    print("other")
+}
+
+let c = 100
+
+switch c {
+case 1:
+    print("num 1")
+case 2...5:
+    print("num 2~5")
+default:
+    print("other")
+}
