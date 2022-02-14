@@ -5,7 +5,7 @@ import Foundation
 
 //func - 유사
 
-//function
+//function - 이름이 있음
 func myScore(a: Int) -> String {
     return "\(a)점"
 }
@@ -69,3 +69,53 @@ let myScore8: (Int, Int, Int) -> String = {
 }
 
 myScore8(20, 30, 40)
+
+//Closure 실전
+//조건 -> 찾는다 -> 특정한 글자가 포함된 것을 찾는다.
+//조건 -> 찾는다 -> 입력한 글자로 시작하는 첫글자를 찾는다.
+let names = ["apple", "air", "brown", "red", "orange", "blue", "candy", "hobby"]
+
+let containsSomeText: (String, String) -> Bool = { name, find in
+    if name.contains(find) {
+        return true
+    }
+    return false
+}
+
+let isStartSomeText: (String, String) -> Bool = { name, find in
+    //name.first라는 값이 String type이 아니여서 description을 이용하여 String으로 변형합니다.
+    if name.first?.description == find {
+        return true
+    }
+    return false
+}
+
+func find(findString: String, condition: (String, String) -> Bool) -> [String] {
+    var newNames = [String]()
+    
+    for name in names {
+        if condition(name, findString) {
+            newNames.append(name)
+        }
+    }
+    
+    return newNames
+}
+
+find(findString: "a", condition: containsSomeText)
+find(findString: "a", condition: isStartSomeText)
+
+//return String Array
+func someFind(find: String) -> [String] {
+    var newNames = [String]()
+    
+    for name in names {
+        if name.contains(find) {
+            newNames.append(name)
+        }
+    }
+    
+    return newNames
+}
+
+someFind(find: "y")
