@@ -55,3 +55,50 @@ func plusF(_ num1: Int, _ num2: Int) -> Int {
 }
 
 let q = plusF(a, b)
+
+//계산기 만들기 -> Class
+//더하기, 빼기.. 기능 -> Function
+
+func plus5(_ num1: Int, _ num2: Int) -> Int {
+    return num1 + num2
+}
+
+func minus(_ num1: Int, _ num2: Int) -> Int {
+    return num1 - num2
+}
+
+func multiply(_ num1: Int, _ num2: Int) -> Int {
+    return num1 * num2
+}
+
+//View, Present, Display
+
+//someLabel.text = "xxxx" + "원"
+//someLabel.textColor = red
+
+var inputButtonType = "+"
+
+if inputButtonType == "+" {
+    print("연산 결과", plus5(a, b))
+    
+} else if inputButtonType == "-" {
+    print("연산 결과", minus(a, b))
+    
+} else if inputButtonType == "*" {
+    print("연산 결과", multiply(a, b))
+}
+
+//Function Type
+func diplayCalc(result: ((Int, Int) -> Int)) {
+    print("연산 결과", result(a, b))
+}
+
+if inputButtonType == "+" {
+    diplayCalc(result: plus5)
+    
+} else if inputButtonType == "-" {
+    diplayCalc(result: minus)
+    
+} else if inputButtonType == "*" {
+    diplayCalc(result: multiply)
+}
